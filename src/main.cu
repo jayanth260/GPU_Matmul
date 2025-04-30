@@ -37,7 +37,7 @@ namespace solution {
         
         // Launch kernel (basic configuration)
         
-        matmulKernel<<<blocks, threads>>>(d_A, d_B, d_C, n, k, m);
+        matmulKernel<<< Dg, Db, Ns, S >>>(d_A, d_B, d_C, n, k, m);
         
         // Copy result back
         
